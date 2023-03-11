@@ -7,25 +7,13 @@ export default class Team {
     this.team[obj.type] = obj;
   }
 
-  [Symbol.iterator]() {
-    const { hero } = this;
-    let current = 0;
-    const last = hero.length;
-    return {
-      next() {
-        if (current < last) {
-          const val = hero[current];
-          current += 1;
-          return {
-            done: false,
-            value: val,
-          };
-        }
-        return {
-          done: true,
-          value: undefined,
-        };
-      },
-    };
+  * [Symbol.iterator]() {
+    const keys = Object.keys(this.team);
+    const limit = keys.length;
+    let counter = -1;
+    const $this = this.team;
+    while (counter < limit) {
+      yield $this[keys[counter += 1]];
+    }
   }
 }

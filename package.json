@@ -1,7 +1,6 @@
 {
-  "name": "ajs11-symbols-iterators-generators-1",
+  "name": "ajs11-symbols-iterators-generators-2",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -25,5 +24,6 @@
   },
   "dependencies": {
     "core-js": "^3.29.0"
-  }
+  },
+  "description": ""
 }
